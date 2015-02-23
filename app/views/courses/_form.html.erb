@@ -1,0 +1,15 @@
+<%= form_for(@course) do |f| %>
+<%= render 'shared/errors', object: @course %>
+<div class="form-group row">
+  <%= f.label :title, class: 'control-label' %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+<div class="form-group row">
+  <%= f.label 'Day/Night', class: 'control-label' %>
+  <%= f.select :day_night, [['Day', true], ['Night', false]] %>
+</div>
+<div class="form-group row">
+  <%= f.submit %>
+</div>
+
+<% end %>

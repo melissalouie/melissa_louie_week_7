@@ -1,13 +1,7 @@
 <%= form_for(@user) do |f| %>
-<% if @user.errors.any? %>
-<div class="alert alert-danger">
-  <ul class="list-unstyled">
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+
+  <%= render 'shared/errors', object: @user %>
+
   <%= f.label :user_name %>
   <%= f.text_field :user_name %>
 
