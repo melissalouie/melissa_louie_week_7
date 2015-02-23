@@ -22,6 +22,18 @@ class CoursesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @course.update(course_params)
+      flash[:notice] = "Course successfully updated."
+      redirect_to course_path(@course)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @course.destroy
     flash[:alert] = "Course successfully deleted."
