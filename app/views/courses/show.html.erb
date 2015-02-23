@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="page-header">
+    <%= link_to 'Delete', course_path(@course), class: 'btn btn-danger pull-right' %>
+    <%= link_to 'Edit', edit_course_path(@course), class: 'btn btn-info pull-right', id: 'edit-button' %>
+    <h1><%= @course.title %></h1>
+  </div>
+  <ol class="breadcrumb">
+    <li><%= link_to 'Courses', courses_path %></li>
+    <li><%= @course.title %></li>
+  </ol>
+  <% if @course.day_night == true %>
+    <h2>Day</h2>
+  <% else %>
+    <h2>Night</h2>
+  <% end %>
+</div>
