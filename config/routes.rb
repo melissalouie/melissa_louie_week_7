@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
   resources :users
+  resources :courses
 
   get '/login' => 'sessions#new', :as => 'login'
   post '/login' => 'sessions#create'

@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(user_name: 'mlouie', password: 'password', about: 'gSchool Student')
+Course.create(title: 'Modern Chinese History', day_night: true)
+Course.create(title: 'Economics 101', day_night: false)
