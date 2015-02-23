@@ -22,7 +22,7 @@
               <td>Night</td>
             <% end %>
             <td><%= link_to 'Edit', edit_course_path(course) %></td>
-            <td><%= link_to 'Delete', course_path(course) %></td>
+            <td><%= link_to 'Delete', course_path(course), method: :delete %></td>
           </tr>
         <% end %>
       </tr>
