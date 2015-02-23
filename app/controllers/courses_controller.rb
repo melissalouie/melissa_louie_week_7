@@ -2,11 +2,19 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
-    @courses = Course.all
+    if current_user
+      @courses = Course.all
+    else
+      redirect_to root_path, notice: "You must be logged in to view this page."
+    end
   end
 
   def new
-    @course = Course.new
+    if current_user
+      @course = Course.new
+    else
+      redirect_to root_path, notice: "You must be logged in to view this page."
+    end
   end
 
   def create
@@ -20,9 +28,19 @@ class CoursesController < ApplicationController
   end
 
   def show
+    if current_user
+      @course = Course.find(params[:id])
+    else
+      redirect_to root_path, notice: "You must be logged in to view this page."
+    end
   end
 
   def edit
+    if current_user
+      @course = User.find(params[:id])
+    else
+      redirect_to root_path, notice: "You must be logged in to view this page."
+    end
   end
 
   def update
