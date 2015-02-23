@@ -35,9 +35,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    flash[:notice] = "User successfully deleted."
-    redirect_to users_path
+    if @user == User.find(current_user.id)
+      redirect_to users_path, alert: "Cannot delete user when signed in."
+    else
+      @user.destroy
+      flash[:notice] = "User successfully deleted."
+      redirect_to users_path
+    end
   end
 
   private
