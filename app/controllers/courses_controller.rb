@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
 
   def edit
     if current_user
-      @course = User.find(params[:id])
+      @course = Course.find(params[:id])
     else
       redirect_to root_path, notice: "You must be logged in to view this page."
     end
