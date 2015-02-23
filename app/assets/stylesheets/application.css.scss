@@ -1,6 +1,10 @@
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
 
+body {
+  margin-top: 50px;
+}
+
 #edit-button {
   margin-right: 10px;
 }

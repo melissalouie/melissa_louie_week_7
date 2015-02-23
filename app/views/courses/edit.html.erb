@@ -3,5 +3,9 @@
     <%= link_to 'Delete', course_path(@course), method: :delete, class: 'btn btn-danger pull-right' %>
     <h1>Edit&nbsp;<%= @course.title %></h1>
   </div>
+  <ol class="breadcrumb">
+    <li><%= link_to 'Courses', courses_path %></li>
+    <li><%= @course.title %></li>
+  </ol>
   <%= render 'form' %>
 </div>
