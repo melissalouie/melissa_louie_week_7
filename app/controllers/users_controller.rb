@@ -22,6 +22,24 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:notice] = "Project successfully updated."
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @user.destroy
+    flash[:notice] = "User successfully deleted."
+    redirect_to users_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:user_name, :about, :password, :password_confirmation)
